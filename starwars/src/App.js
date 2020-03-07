@@ -4,6 +4,14 @@ import axios from 'axios';
 
 const App = () => {
 
+  const [people, setPeople] = useState([]);
+
+
+
+
+
+
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
