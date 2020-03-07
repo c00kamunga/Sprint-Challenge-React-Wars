@@ -6,6 +6,16 @@ const App = () => {
 
   const [people, setPeople] = useState([]);
 
+  useEffect(() => {
+axios 
+.get('https://swapi.co/api/people/')
+.then(res => {
+console.log(res.data.results)
+})
+.catch(err => {
+  console.log(err)
+})
+}, []);
 
 
 
