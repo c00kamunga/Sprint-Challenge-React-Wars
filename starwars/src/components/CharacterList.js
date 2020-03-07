@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CharacterList(props) {
+function CharacterList(props) {
     return (
         <div>
             {props.people.map(swPeople => (
@@ -9,3 +9,6 @@ export default function CharacterList(props) {
         </div>
     )
 }
+
+
+export default CharacterList;

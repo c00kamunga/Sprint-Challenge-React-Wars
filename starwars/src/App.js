@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import CharacterList from './components/CharacterList';
 
 const App = () => {
   const [people, setPeople] = useState([]);
@@ -8,8 +9,9 @@ const App = () => {
   useEffect(() => {
     axios
       .get("https://swapi.co/api/people/")
-      .then(res => {
+      .then((res) => {
         console.log(res.data.results);
+        setPeople(res.data.results)
       })
       .catch(err => {
         console.log(err);
@@ -19,6 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <CharacterList people={people}/>
     </div>
   );
 };
